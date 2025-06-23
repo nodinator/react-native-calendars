@@ -241,7 +241,6 @@ function getDateForDayRange(date: string, weekIndex: number, numberOfDays: numbe
 
 function getDate(date: string, firstDay: number, weekIndex: number, numberOfDays?: number) {
   const d = new XDate(date);
-  // get the first day of the week as date (for the on scroll mark)
   let dayOfTheWeek = d.getDay();
   if (dayOfTheWeek < firstDay && firstDay > 0) {
     dayOfTheWeek = 7 + dayOfTheWeek;
@@ -250,10 +249,8 @@ function getDate(date: string, firstDay: number, weekIndex: number, numberOfDays
     d.addDays(firstDay - dayOfTheWeek);
   }
   const newDate = numberOfDays && numberOfDays > 1 ? d.addDays(weekIndex * numberOfDays) : d.addWeeks(weekIndex);
-  const today = new XDate();
-  const offsetFromNow = newDate.diffDays(today);
-  const isSameWeek = offsetFromNow > 0 && offsetFromNow < (numberOfDays ?? 7);
-  return toMarkingFormat(isSameWeek ? today : newDate);
+
+  return toMarkingFormat(newDate);
 }
 
 function getDatesArray(date: string, firstDay: number, numberOfDays?: number) {
