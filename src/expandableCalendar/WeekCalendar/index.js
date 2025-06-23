@@ -111,7 +111,7 @@ const WeekCalendar = props => {
     },
     [firstDay, _onDayPress, context, date, markedDates]
   );
-  const keyExtractor = useCallback(item => item, []);
+  const keyExtractor = useCallback((item, index) => `${item}_${index}`, []);
   const renderWeekDaysNames = useMemo(() => {
     return <WeekDaysNames firstDay={firstDay} style={style.current.dayHeader} />;
   }, [firstDay]);
