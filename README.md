@@ -14,6 +14,10 @@ $ cd ios && pod install && cd ..
 $ npx react-native run-ios --simulator="iPhone 15"
 ```
 
+## Build
+
+$ npm run build:ts
+
 [![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner2-direct.svg)](https://stand-with-ukraine.pp.ua)
 
 # React Native Calendars 🗓️ 📆
