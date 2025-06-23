@@ -69,12 +69,9 @@ const CalendarProvider = (props: CalendarContextProviderProps) => {
     return [style.current.contextWrapper, propsStyle];
   }, [style, propsStyle]);
 
-  const hasInitialized = useRef(false);
-
   useDidUpdate(() => {
-    if (!hasInitialized.current && date && date !== currentDate) {
+    if (date && date !== currentDate) {
       _setDate(date, UpdateSources.PROP_UPDATE);
-      hasInitialized.current = true;
     }
   }, [date]);
 
