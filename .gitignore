@@ -4,6 +4,7 @@ npm-debug.log
 .vscode
 package-lock.json
 
+
 # OSX
 #
 .DS_Store
@@ -77,3 +78,6 @@ ios/Podfile.lock
 
 # testing
 /coverage
+
+ios/*
+android/*
