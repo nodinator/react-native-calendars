@@ -6,6 +6,7 @@ export declare enum Positions {
     OPEN = "open"
 }
 export interface ExpandableCalendarProps extends CalendarListProps {
+    expandedBottomPadding?: number;
     /** the initial position of the calendar ('open' or 'closed') */
     initialPosition?: Positions;
     /** callback that fires when the calendar is opened or closed */

@@ -66,6 +66,8 @@ const ExpandableCalendar = props => {
     openThreshold = PAN_GESTURE_THRESHOLD,
     closeThreshold = PAN_GESTURE_THRESHOLD,
     closeOnDayPress = true,
+    // CUSTOM
+    expandedBottomPadding = 0,
     /** CalendarList props */
     horizontal = true,
     calendarStyle,
@@ -126,7 +128,8 @@ const ExpandableCalendar = props => {
       CLOSED_HEIGHT +
       WEEK_HEIGHT * (numberOfWeeks.current - 1) +
       (hideKnob ? 12 : KNOB_CONTAINER_HEIGHT) +
-      (constants.isAndroid ? 3 : 0)
+      (constants.isAndroid ? 3 : 0) +
+      expandedBottomPadding
     );
   };
   const openHeight = useRef(getOpenHeight());
