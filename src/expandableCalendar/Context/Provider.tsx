@@ -69,30 +69,39 @@ const CalendarProvider = (props: CalendarContextProviderProps) => {
     return [style.current.contextWrapper, propsStyle];
   }, [style, propsStyle]);
 
+  const hasInitialized = useRef(false);
+
   useDidUpdate(() => {
-    if (date && date !== currentDate) {
+    if (!hasInitialized.current && date && date !== currentDate) {
       _setDate(date, UpdateSources.PROP_UPDATE);
+      hasInitialized.current = true;
     }
   }, [date]);
 
-  const _setDate = useCallback((date: string, updateSource: UpdateSources) => {
-    prevDate.current = currDate.current;
-    currDate.current = date;
-    setCurrentDate(date);
-    setUpdateSource(updateSource);
+  const _setDate = useCallback(
+    (date: string, updateSource: UpdateSources) => {
+      prevDate.current = currDate.current;
+      currDate.current = date;
+      setCurrentDate(date);
+      setUpdateSource(updateSource);
 
-    onDateChanged?.(date, updateSource);
+      onDateChanged?.(date, updateSource);
 
-    if (!sameMonth(new XDate(date), new XDate(prevDate.current))) {
-      onMonthChange?.(xdateToData(new XDate(date)), updateSource);
-    }
-  }, [onDateChanged, onMonthChange]);
+      if (!sameMonth(new XDate(date), new XDate(prevDate.current))) {
+        onMonthChange?.(xdateToData(new XDate(date)), updateSource);
+      }
+    },
+    [onDateChanged, onMonthChange]
+  );
 
-  const _setDisabled = useCallback((disabled: boolean) => {
-    if (showTodayButton) {
-      todayButton.current?.disable(disabled);
-    }
-  }, [showTodayButton]);
+  const _setDisabled = useCallback(
+    (disabled: boolean) => {
+      if (showTodayButton) {
+        todayButton.current?.disable(disabled);
+      }
+    },
+    [showTodayButton]
+  );
 
   const contextValue = useMemo(() => {
     return {
@@ -120,7 +129,9 @@ const CalendarProvider = (props: CalendarContextProviderProps) => {
 
   return (
     <CalendarContext.Provider value={contextValue}>
-      <View style={wrapperStyle} key={numberOfDays}>{children}</View>
+      <View style={wrapperStyle} key={numberOfDays}>
+        {children}
+      </View>
       {showTodayButton && renderTodayButton()}
     </CalendarContext.Provider>
   );

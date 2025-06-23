@@ -36,9 +36,11 @@ const CalendarProvider = props => {
   const wrapperStyle = useMemo(() => {
     return [style.current.contextWrapper, propsStyle];
   }, [style, propsStyle]);
+  const hasInitialized = useRef(false);
   useDidUpdate(() => {
-    if (date && date !== currentDate) {
+    if (!hasInitialized.current && date && date !== currentDate) {
       _setDate(date, UpdateSources.PROP_UPDATE);
+      hasInitialized.current = true;
     }
   }, [date]);
   const _setDate = useCallback(
