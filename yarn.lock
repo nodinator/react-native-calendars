@@ -7080,10 +7080,10 @@ recast@^0.21.0:
     source-map "~0.6.1"
     tslib "^2.0.1"
 
-recyclerlistview@^4.0.0:
-  version "4.2.3"
-  resolved "https://registry.npmjs.org/recyclerlistview/-/recyclerlistview-4.2.3.tgz#14032e7ad2f24396e24d5b3060c6ba76b567f000"
-  integrity sha512-STR/wj/FyT8EMsBzzhZ1l2goYirMkIgfV3gYEPxI3Kf3lOnu6f7Dryhyw7/IkQrgX5xtTcDrZMqytvteH9rL3g==
+recyclerlistview@4.2.1:
+  version "4.2.1"
+  resolved "https://registry.npmjs.org/recyclerlistview/-/recyclerlistview-4.2.1.tgz#4537a0959400cdce1df1f38d26aab823786e9b13"
+  integrity sha512-NtVYjofwgUCt1rEsTp6jHQg/47TWjnO92TU2kTVgJ9wsc/ely4HnizHHa+f/dI7qaw4+zcSogElrLjhMltN2/g==
   dependencies:
     lodash.debounce "4.0.8"
     prop-types "15.8.1"
@@ -8463,10 +8463,10 @@ ws@^7, ws@^7.0.0, ws@^7.5.1, ws@^7.5.10:
   resolved "https://registry.npmjs.org/ws/-/ws-7.5.10.tgz#58b5c20dc281633f6c19113f39b349bd8bd558d9"
   integrity sha512-+dbF1tHwZpXcbOJdVOkzLDxZP1ailvSxM6ZweXTegylPny803bFhA+vqBYw4s31NSAk4S2Qz+AKXK9a4wkdjcQ==
 
-xdate@^0.8.0:
-  version "0.8.3"
-  resolved "https://registry.npmjs.org/xdate/-/xdate-0.8.3.tgz#422068681eeac81f68acffa1a38cd287bb179b85"
-  integrity sha512-1NhJWPJwN+VjbkACT9XHbQK4o6exeSVtS2CxhMPwUE7xQakoEFTlwra9YcqV/uHQVyeEUYoYC46VGDJ+etnIiw==
+xdate@0.8.2:
+  version "0.8.2"
+  resolved "https://registry.npmjs.org/xdate/-/xdate-0.8.2.tgz#d7b033c00485d02695baf0044f4eacda3fc961a3"
+  integrity sha512-sNBlLfOC8S3V0vLDEUianQOXcTsc9j4lfeKU/klHe0RjHAYn0CXsSttumTot8dzalboV8gZbH38B+WcCIBjhFQ==
 
 xtend@~4.0.1:
   version "4.0.2"
