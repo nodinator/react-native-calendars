@@ -1,3 +1,19 @@
+## Try it out ⚡
+
+You can run a sample module using these steps:
+
+```
+$ git clone git@github.com:wix/react-native-calendars.git
+
+$ cd react-native-calendars
+
+$ yarn install
+
+$ cd ios && pod install && cd ..
+
+$ npx react-native run-ios --simulator="iPhone 15"
+```
+
 [![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner2-direct.svg)](https://stand-with-ukraine.pp.ua)
 
 # React Native Calendars 🗓️ 📆
@@ -29,22 +45,6 @@ The package is compatible with both **Android** and **iOS**
 - Allowing or blocking certain dates
 - Accessibility support
 - Automatic date formatting for different locales
-
-## Try it out ⚡
-
-You can run a sample module using these steps:
-
-```
-$ git clone git@github.com:wix/react-native-calendars.git
-
-$ cd react-native-calendars
-
-$ yarn install
-
-$ cd ios && pod install && cd ..
-
-$ react-native run-ios
-```
 
 You can check example screens source code in [example module screens](https://github.com/wix-private/wix-react-native-calendar/tree/master/example/src/screens)
 
@@ -188,23 +188,23 @@ export default App;
 ### Adding a global theme to the calendar:
 
 ```javascript
-    <Calendar
-      style={{
-        borderWidth: 1,
-        borderColor: 'gray',
-        height: 350,
-      }}
-      theme={{
-        backgroundColor: '#ffffff',
-        calendarBackground: '#ffffff',
-        textSectionTitleColor: '#b6c1cd',
-        selectedDayBackgroundColor: '#00adf5',
-        selectedDayTextColor: '#ffffff',
-        todayTextColor: '#00adf5',
-        dayTextColor: '#2d4150',
-        textDisabledColor: '#dd99ee'
-      }}
-    />
+<Calendar
+  style={{
+    borderWidth: 1,
+    borderColor: 'gray',
+    height: 350
+  }}
+  theme={{
+    backgroundColor: '#ffffff',
+    calendarBackground: '#ffffff',
+    textSectionTitleColor: '#b6c1cd',
+    selectedDayBackgroundColor: '#00adf5',
+    selectedDayTextColor: '#ffffff',
+    todayTextColor: '#00adf5',
+    dayTextColor: '#2d4150',
+    textDisabledColor: '#dd99ee'
+  }}
+/>
 ```
 
 ## Customized Calendar Examples
